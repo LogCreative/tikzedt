@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/TikzEdt.backup
+/AnalysisReport.sarif
+/upgrade-assistant.clef

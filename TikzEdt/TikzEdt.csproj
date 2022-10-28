@@ -1,21 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8DC4C41D-2095-4213-A46B-121EB550A2ED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TikzEdt</RootNamespace>
-    <AssemblyName>TikzEdt</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -35,29 +22,14 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\TikzEdt.XML</DocumentationFile>
     <NoWarn>1591, 1587, 1572, 1573</NoWarn>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>tikzedt48.ico</ApplicationIcon>
@@ -82,18 +54,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseRaw|x86'">
     <OutputPath>bin\x86\ReleaseRaw\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>bin\Release\TikzEdt.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
-    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="antlr.runtime, Version=2.7.7.3, Culture=neutral, PublicKeyToken=d7701e059243744f">
@@ -126,211 +91,28 @@
     <Reference Include="StringTemplate">
       <HintPath>..\lib\StringTemplate.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="UIAutomationProvider" />
-    <Reference Include="UIAutomationTypes" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="WPFToolkit.Extended, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\WPFToolkit.Extended.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="DynPreamble\DynPreambleEditDialog.xaml.cs">
-      <DependentUpon>DynPreambleEditDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DynPreamble\DynPreambleView.xaml.cs">
-      <DependentUpon>DynPreambleView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ExportCompiler\ExportCompileDialog.xaml.cs">
-      <DependentUpon>ExportCompileDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Misc\Converters.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="Overlay\OverlayShapeViews.cs" />
-    <Compile Include="Overlay\PdfOverlay.xaml.cs">
-      <DependentUpon>PdfOverlay.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Snippets\SnippetImporter.xaml.cs">
-      <DependentUpon>SnippetImporter.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RasterControl.xaml.cs">
-      <DependentUpon>RasterControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsDialog.xaml.cs">
-      <DependentUpon>SettingsDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Snippets\SnippetList.xaml.cs">
-      <DependentUpon>SnippetList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Snippets\SnippetManager.xaml.cs">
-      <DependentUpon>SnippetManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TikzDisplay.xaml.cs">
-      <DependentUpon>TikzDisplay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TikzEdtAbout.xaml.cs">
-      <DependentUpon>TikzEdtAbout.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TipsTricksWindow.xaml.cs">
-      <DependentUpon>TipsTricksWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="DynPreamble\DynPreambleEditDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DynPreamble\DynPreambleView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ExportCompiler\ExportCompileDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Images\All_icon.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Overlay\PdfOverlay.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RasterControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\DarkTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\ExpressionDark.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\GrayTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\MainWindowResources.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\ResourceDict.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\Std_Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SettingsDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Snippets\SnippetImporter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Snippets\SnippetList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Snippets\SnippetManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TikzDisplay.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TikzEdtAbout.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TipsTricksWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Editor\CodeCompletions.xml">
+    <None Update="Editor\CodeCompletions.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Editor\TikzSyntax.xshd">
+    <None Update="Editor\TikzSyntax.xshd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="InstallPackages_Miktex.bat">
+    <None Update="InstallPackages_Miktex.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="InstallPackages_TexLive.bat">
+    <None Update="InstallPackages_TexLive.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="SnippetThumbs.zip">
+    <None Update="SnippetThumbs.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="TikzEdt %28portable%29.bat">
@@ -580,42 +362,15 @@
     <Resource Include="Images\savePdf.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Components\AuxiliaryPrograms\Unzipper\Unzipper.csproj">
-      <Project>{A5AE753E-3A06-4770-9AAC-4E902D1868E3}</Project>
-      <Name>Unzipper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Components\AuxiliaryPrograms\XSHDEditor\XSHDEditor.csproj">
-      <Project>{4FC9ABF5-F001-4439-9FF4-F516F428121A}</Project>
-      <Name>XSHDEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Components\FileListView\FileListView\FileListView.csproj">
-      <Project>{1EDFF96E-0520-4D6C-8CBD-754510DB57D6}</Project>
-      <Name>FileListView %28Components\FileListView\FileListView%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Components\FindReplaceTest\FindReplace\FindReplace.csproj">
-      <Project>{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}</Project>
-      <Name>FindReplace %28Components\FindReplace\FindReplace%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Components\TextEditorEx\TextEditorEx\TextEditorEx.csproj">
-      <Project>{15E848B4-F289-4580-BAEA-F818F2899E23}</Project>
-      <Name>TextEditorEx %28Components\TextEditorEx\TextEditorEx%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TEApplicationLogic\TEApplicationLogic.csproj">
-      <Project>{EB03FD23-3941-4B4B-964C-29CB265BA5EA}</Project>
-      <Name>TEApplicationLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TESharedComponents\TESharedComponents.csproj">
-      <Project>{67D51221-DEBE-4A44-9C67-F09DEAA69368}</Project>
-      <Name>TESharedComponents</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TikzParser\TikzParser.csproj">
-      <Project>{DCEE85EE-19E0-46F4-8C94-BB044075561F}</Project>
-      <Name>TikzParser</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfSpecificComponents\WpfSpecificComponents.csproj">
-      <Project>{09025834-E5F7-4D1A-A2B7-130E4C45BE13}</Project>
-      <Name>WpfSpecificComponents</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Components\AuxiliaryPrograms\Unzipper\Unzipper.csproj" />
+    <ProjectReference Include="..\Components\AuxiliaryPrograms\XSHDEditor\XSHDEditor.csproj" />
+    <ProjectReference Include="..\Components\FileListView\FileListView\FileListView.csproj" />
+    <ProjectReference Include="..\Components\FindReplaceTest\FindReplace\FindReplace.csproj" />
+    <ProjectReference Include="..\Components\TextEditorEx\TextEditorEx\TextEditorEx.csproj" />
+    <ProjectReference Include="..\TEApplicationLogic\TEApplicationLogic.csproj" />
+    <ProjectReference Include="..\TESharedComponents\TESharedComponents.csproj" />
+    <ProjectReference Include="..\TikzParser\TikzParser.csproj" />
+    <ProjectReference Include="..\WpfSpecificComponents\WpfSpecificComponents.csproj" />
   </ItemGroup>
   <ItemGroup>
     <SplashScreen Include="TESplashScreen.png" />
@@ -624,7 +379,7 @@
     <Resource Include="Images\CopyHS.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Editor\TheSnippets.xml">
+    <None Update="Editor\TheSnippets.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -702,7 +457,7 @@
     <Resource Include="Images\openinnew.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="mudraw.exe">
+    <None Update="mudraw.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -711,12 +466,64 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.346202">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="AutoGrayImage.cs" />
+    <Compile Remove="CmdLineArgumentParser.cs" />
+    <Compile Remove="CodeCompleter.cs" />
+    <Compile Remove="Data\CompletionDS.cs" />
+    <Compile Remove="Data\CompletionDS.Designer.cs" />
+    <Compile Remove="DynPreamble\DynPreambleVM.cs" />
+    <Compile Remove="Editor\CodeCompleter.cs" />
+    <Compile Remove="Editor\FindReplaceDialog.xaml.cs" />
+    <Compile Remove="Editor\TextEditorEx.cs" />
+    <Compile Remove="ExportCompiler\ExportCompileVM.cs" />
+    <Compile Remove="FileDownloader.cs" />
+    <Compile Remove="FileViewer\FolderComboBox.xaml.cs" />
+    <Compile Remove="FileViewer\FolderView.xaml.cs" />
+    <Compile Remove="FileViewer\IconHelper.cs" />
+    <Compile Remove="FileViewer\IconListManager.cs" />
+    <Compile Remove="MainWindow.xaml - with avalondock.cs" />
+    <Compile Remove="Misc\AutoGrayImage.cs" />
+    <Compile Remove="Misc\CmdLineArgumentParser.cs" />
+    <Compile Remove="Misc\DockPanelSplitter.cs" />
+    <Compile Remove="Misc\FileDownloader.cs" />
+    <Compile Remove="MyCompletionData.cs" />
+    <Compile Remove="Overlay\ArcEditTool.cs" />
+    <Compile Remove="Overlay\ArcTool.cs" />
+    <Compile Remove="Overlay\BezierTool.cs" />
+    <Compile Remove="Overlay\InputMessageBox.xaml.cs" />
+    <Compile Remove="Overlay\OverlayShape.cs" />
+    <Compile Remove="Overlay\OverlayTool.cs" />
+    <Compile Remove="Overlay\PdfOverlayModel.cs" />
+    <Compile Remove="Overlay\Rect_and_EllipseTools.cs" />
+    <Compile Remove="Overlay\SelectionTool.cs" />
+    <Compile Remove="Overlay\SmoothCurveTool.cs" />
+    <Compile Remove="RecentFileList\RecentFileList.cs" />
+    <Compile Remove="Snippets\SnippetListModel.cs" />
+    <Compile Remove="Snippets\SnippetsDataSet.Designer.cs" />
+    <Compile Remove="SourceManager.cs" />
+    <Compile Remove="TexCompiler.cs" />
+    <Compile Remove="TexOutputParser.cs" />
+    <Compile Remove="ViewModels\MainWindowVM.cs" />
+    <Compile Remove="ViewModels\RelayCommand.cs" />
+    <Compile Remove="ViewModels\TEDocument.cs" />
+    <Compile Remove="Views\DocumentView.xaml.cs" />
+    <Compile Remove="WindowSetting.cs" />
+    <EmbeddedResource Remove="CmdLineArgumentParserRes.resx" />
+    <Page Remove="Editor\FindReplaceDialog.xaml" />
+    <Page Remove="Editor\TextEditorEx.xaml" />
+    <Page Remove="FileViewer\FolderComboBox.xaml" />
+    <Page Remove="FileViewer\FolderView.xaml" />
+    <Page Remove="MainWindow - with avalondock.xaml" />
+    <Page Remove="Overlay\InputMessageBox.xaml" />
+    <Page Remove="Views\DocumentView.xaml" />
+  </ItemGroup>
 </Project>
