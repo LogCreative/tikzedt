@@ -34,6 +34,7 @@ using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
+using TEApplicationLogic.Snippets;
 
 namespace TikzEdt.Snippets
 {

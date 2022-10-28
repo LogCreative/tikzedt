@@ -28,7 +28,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Data;
-
+using TEApplicationLogic.Snippets;
 
 namespace TikzEdt.Snippets
 {

@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:TikzEdt"
         xmlns:myEditor="clr-namespace:TikzEdt.Editor;assembly=TextEditorEx"
         xmlns:mySnippets="clr-namespace:TikzEdt.Snippets"
-        xmlns:mySnippetsAL="clr-namespace:TikzEdt.Snippets;assembly=TEApplicationLogic"
+        xmlns:mySnippetsAL="clr-namespace:TEApplicationLogic.Snippets;assembly=TEApplicationLogic"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
         xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
         Title="SnippetManager" Height="607" Width="747" Closing="Window_Closing" 

@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Collections;
+using TEApplicationLogic.Snippets;
 
 namespace TikzEdt.Snippets
 {

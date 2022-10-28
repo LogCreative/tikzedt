@@ -9,6 +9,7 @@ using System.Threading;
 //using Ionic.Zip;
 using ICSharpCode.SharpZipLib;
 using ICSharpCode.SharpZipLib.Zip;
+using TEApplicationLogic.Snippets;
 
 namespace TikzEdt.Snippets
 {
